@@ -159,8 +159,6 @@ client.on('ready', () => {
       }
     });
       }
-      
-
     if(command === "howgay") {
         //${member.user.tag}
         let member = message.mentions.members.first();
@@ -200,6 +198,9 @@ message.channel.send("Ja, ik ben het met u eens");
       file: "" // Or replace with FileOptions object
   });
   }
+  if (command === "avatar") {
+    message.channel.send(message.author.avatarURL);
+}
 
     //
     if(command === "say") {
