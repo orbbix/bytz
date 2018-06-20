@@ -26,8 +26,6 @@ client.on('warn', console.warn);
 
 client.on('error', console.error);
 
-client.on('ready', () => console.log('Yo this ready!'));
-
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
@@ -40,7 +38,11 @@ client.on('serverNewMember', function(server, user) {
 
 
 client.on('ready', () => {
-    client.user.setGame('bytz:help')
+    client.user.setGame(name = 'bytz:help', url = 'https://twitch.tv/sylverviper', type = 1);
+    client.user.setStatus('dnd')
+    .then(console.log)
+    .catch(console.error);
+    
   });
   client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
@@ -136,13 +138,6 @@ client.on('ready', () => {
           icon_url: client.user.avatarURL,
           text: "Bytz Help"}
       }})};
-      
-    while(x > 0){
-      x-1;
-    }
-    if(x <= 0 ){
-      x=100;
-    }
     
     if(command === "ping") {
       // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
@@ -150,6 +145,22 @@ client.on('ready', () => {
       const m = await message.channel.send("Ping?");
       m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
     }
+
+    if(command === "github"){
+      message.channel.send({embed: {
+        color: 3447003,
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        title: "here",
+        url: "https://github.com/orbbix/bytz",
+        description: "\u200b"
+      }
+    });
+      }
+      
+
     if(command === "howgay") {
         //${member.user.tag}
         let member = message.mentions.members.first();
@@ -172,21 +183,21 @@ message.channel.send("Ja, ik ben het met u eens");
   }
   if(command === "8ball"){
     var eightball = [ // sets the answers to an eightball
-      "yes!",
-      "no...",
-      "maybe?",
-      "probably",
-      "I don't think so.",
-      "never!",
-      "you can try...",
-      "up to you!",
+      ":eyes:  Zeer zekers",
+      ":eyes:  Nee",
+      ":eyes:  Misschien??",
+      ":eyes:  Hoogst waarschijnlijk",
+      ":eyes:  Ik heb zo mijn twijfels",
+      ":eyes:  Volgens mij niet",
+      ":eyes:  Ja",
+      ":eyes:  Wie weet?",
   ]
     var rand = eightball[Math.floor(Math.random() * eightball.length)];   
     message.channel.send(rand);
   }
   if(command === "test"){
     message.channel.send("some text", {
-      file: "https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/f/f0/Boi_sponge.jpg/revision/latest/scale-to-width-down/640?cb=20170115200131" // Or replace with FileOptions object
+      file: "" // Or replace with FileOptions object
   });
   }
 
