@@ -75,63 +75,53 @@ client.on('ready', () => {
         color: 3447003,
         description: "Commands",
         fields: [{
+          name:'\u200b',
+          value:'\u200b'
+        },
+        {
             name: "bytz:help",
             value: "Dit menu, bruh"
-          },{
-            name:'\u200b',
-           value:'\u200b'
+          
           },
           {
             name: "bytz:ping",
             value: "Pong!"
-          },{
-            name:'\u200b',
-           value:'\u200b'
+          
           },
           {
             name: "bytz:purge",
             value: "Haalt aantal berichten weg"
-          },{
-            name:'\u200b',
-           value:'\u200b'
           },
+          
           {
             name: "bytz:kick",
             value: "Schopt iemand de server uit"
-          },{
-            name:'\u200b',
-           value:'\u200b'
+          
           },
           {
             name: "bytz:ban",
             value: "De verban-hamer heeft gesproken"
-          },{
-            name:'\u200b',
-           value:'\u200b'
           },
+          
           {
             name: "bytz:say",
             value: "Ik praat precies na wat jij zegt"
-          },{
-            name:'\u200b',
-           value:'\u200b'
           },
           {
             name: "bytz:howgay",
             value: "Laat zien hoe gay iemand is"
-          },{
-            name:'\u200b',
-           value:'\u200b'
           },
+          
           {
             name: "bytz:agree",
             value: "Laat zien of ik het wel of niet met u eens ben"
           },{
-            name:'\u200b',
-           value:'\u200b'
+            name:'bytz:github',
+           value:'De github pagina waar de source code staat'
+          },{
+            name:'bytz:8ball',
+           value:'De bal van de waarheid'
           }
-          
-  
         ],
         timestamp: new Date(),
         footer: {
