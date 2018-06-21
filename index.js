@@ -40,6 +40,7 @@ client.on('serverNewMember', function(server, user) {
 client.on('ready', () => {
     client.user.setGame(name = 'snow:help 🐾💗', url = 'https://twitch.tv/sylverviper', type = 1);
     client.user.setStatus('dnd')
+    client.user.setUsername("Snowy")
     .then(console.log)
     .catch(console.error);
     
@@ -122,6 +123,12 @@ client.on('ready', () => {
           },{
             name: p+'8ball',
            value:'De bal van de waarheid'
+          },{
+            name: p+'kill',
+           value:'Vermoord iemand'
+          },{
+            name: p+'avatar',
+           value:'Haalt je avatar op'
           }
         ],
         timestamp: new Date(),
@@ -183,11 +190,6 @@ message.channel.send("Ja, ik ben het met u eens");
   ]
     var rand = eightball[Math.floor(Math.random() * eightball.length)];   
     message.channel.send(rand);
-  }
-  if(command === "test"){
-    message.channel.send("some text", {
-      file: "" // Or replace with FileOptions object
-  });
   }
   if (command === "avatar") {
     message.channel.send(message.author.avatarURL);
