@@ -1,1 +1,1 @@
-kys
+discord-bot
