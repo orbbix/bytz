@@ -33,7 +33,7 @@ client.on('reconnecting', () => console.log('I am reconnecting now!'));
 const config = require("./config.json");
 
 client.on('serverNewMember', function(server, user) {
-	client.sendMessage(server, "Welkom" + user.username + " bij " + server.name + ". Typ bytz:help voor mijn commands.");
+	client.sendMessage(server, "Welkom" + user.username + " bij " + server.name);
 });
 
 
