@@ -73,7 +73,7 @@ client.on('ready', () => {
     // Let's go with a few common example commands! Feel free to delete or change those.
     if(command === "help") {message.reply("Hoezo heb je help nodig? Je hebt toch woordenboek.");
     message.author.sendMessage({embed: {
-        color: 3447003,
+        color: 7645899,
         description: "Commands",
         fields: [{
           name:'\u200b',
@@ -156,7 +156,7 @@ client.on('ready', () => {
         if(!member)
           return message.reply("Please mention a valid member of this server");
           message.channel.send({embed: {
-            color: 3447003,
+            color: 7645899,
             
             fields: [{
               name: "Laten we kijken hoe gay deze pleb is",
@@ -191,6 +191,23 @@ message.channel.send("Ja, ik ben het met u eens");
   }
   if (command === "avatar") {
     message.channel.send(message.author.avatarURL);
+}
+if(command === "kill"){
+  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+  var kill = [
+    `${member.user.tag} died due an heartattack, because of all their mental disabilities`,
+    `${member.user.tag} was gay in Iran, trust me you dont want to be gay in Iran`,
+    `${member.user.tag} took the bullet, to the head`,
+    `${member.user.tag} watched too much logan paul, which gave their eyes cancer`,
+    `${member.user.tag} died of watching too much dank memes, and some of them were normie`,
+    `${member.user.tag} tried to look into the mirror, then their horrible ugliness killed them`,
+    `${member.user.tag} was sent to gulag, and never came back`
+  ];
+  
+  if(!member)
+    return message.reply("Please mention a valid member of this server");
+    var rand = kill[Math.floor(Math.random() * kill.length)];  
+  await message.channel.send(rand);
 }
 
     //
