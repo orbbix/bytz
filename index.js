@@ -38,7 +38,7 @@ client.on('serverNewMember', function(server, user) {
 
 
 client.on('ready', () => {
-    client.user.setGame(name = 'bytz:help', url = 'https://twitch.tv/sylverviper', type = 1);
+    client.user.setGame(name = 'snow:help 🐾💗', url = 'https://twitch.tv/sylverviper', type = 1);
     client.user.setStatus('dnd')
     .then(console.log)
     .catch(console.error);
@@ -63,7 +63,8 @@ client.on('ready', () => {
     const commande = args.shift().toLowerCase();
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
-    const serverQueue = queue.get(message.guild.id);
+    // const serverQueue = queue.get(message.guild.id);
+    const p = config.prefix;
   
     let command = message.content.toLowerCase().split(' ')[0];
     command = commande.slice(PREFIX)
@@ -71,7 +72,7 @@ client.on('ready', () => {
     
     // Let's go with a few common example commands! Feel free to delete or change those.
     if(command === "help") {message.reply("Hoezo heb je help nodig? Je hebt toch woordenboek.");
-    message.channel.send({embed: {
+    message.author.sendMessage({embed: {
         color: 3447003,
         description: "Commands",
         fields: [{
@@ -79,54 +80,54 @@ client.on('ready', () => {
           value:'\u200b'
         },
         {
-            name: "bytz:help",
+            name: p+"help",
             value: "Dit menu, bruh"
           
           },
           {
-            name: "bytz:ping",
+            name: p+"ping",
             value: "Pong!"
           
           },
           {
-            name: "bytz:purge",
+            name: p+"purge",
             value: "Haalt aantal berichten weg"
           },
           
           {
-            name: "bytz:kick",
+            name: p+"kick",
             value: "Schopt iemand de server uit"
           
           },
           {
-            name: "bytz:ban",
+            name: p+"ban",
             value: "De verban-hamer heeft gesproken"
           },
           
           {
-            name: "bytz:say",
+            name: p+"say",
             value: "Ik praat precies na wat jij zegt"
           },
           {
-            name: "bytz:howgay",
+            name: p+"howgay",
             value: "Laat zien hoe gay iemand is"
           },
           
           {
-            name: "bytz:agree",
+            name: p+"agree",
             value: "Laat zien of ik het wel of niet met u eens ben"
           },{
-            name:'bytz:github',
+            name: p+'github',
            value:'De github pagina waar de source code staat'
           },{
-            name:'bytz:8ball',
+            name: p+'8ball',
            value:'De bal van de waarheid'
           }
         ],
         timestamp: new Date(),
         footer: {
           icon_url: client.user.avatarURL,
-          text: "Bytz Help"}
+          text: "Snowy Help"}
       }})};
     
     if(command === "ping") {
